@@ -191,3 +191,18 @@
 
 **Stop Reason:**
 - Pages Hardened.
+
+## [2026-01-02 16:00:00] Final Link Reliability
+
+**Objective:** Ensure 100% link reliability on landing page.
+
+**Patch Summary:**
+- `docs/index.md`: Updated "Self-Hosting Guide" link to use absolute GitHub blob URL.
+- `docs/index.md`: Verified all navigation links point to `github.com` to avoid Pages routing issues.
+
+**Verification Results:**
+1.  **Static Correctness:** All links are absolute `https://github.com/...` URLs.
+2.  **UX Safety:** No 404s possible from relative path resolution on Pages.
+
+**Stop Reason:**
+- Links Finalized.
