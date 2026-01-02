@@ -27,6 +27,9 @@ This repository is a **workflow demonstration**. It showcases how AI agents can 
 
 *Screenshots of the Micro-Claims Tracker application.*
 
+> **Note:** Screenshots are pending. Please run the app locally to view the UI.
+
+<!--
 ### Dashboard
 ![Dashboard View](assets/dashboard.png)
 *The main dashboard showing active claims, filters, and status indicators.*
@@ -42,8 +45,7 @@ This repository is a **workflow demonstration**. It showcases how AI agents can 
 ### Weekly Digest
 ![Export Preview](assets/export.png)
 *Deterministic markdown export for weekly reporting.*
-
-*(Note: Screenshots are pending. If missing, please run the app locally and capture them to `docs/assets/`)*
+-->
 
 ---
 
@@ -60,8 +62,8 @@ You can run this application locally or self-host it for your team.
 
 Explore the documents that drove this build:
 
-- **[Blueprint](artifacts/blueprint.md)**: The high-level architectural vision.
-- **[Manifesto](artifacts/manifesto.md)**: The core philosophy of the build.
-- **[Directive](artifacts/directive.md)**: The specific instructions for the Executor.
-- **[Executor Contract](artifacts/EXECUTOR_CONTRACT.md)**: The rules of engagement.
-- **[Runbook: UI Boot](artifacts/RUNBOOK_UI_BOOT.md)**: The specific UI requirements.
+- **[Blueprint](https://github.com/HAAIL-Universe/AIBuild/blob/main/build_docs/blueprint.md)**: The high-level architectural vision.
+- **[Manifesto](https://github.com/HAAIL-Universe/AIBuild/blob/main/build_docs/manifesto.md)**: The core philosophy of the build.
+- **[Directive](https://github.com/HAAIL-Universe/AIBuild/blob/main/build_docs/directive.md)**: The specific instructions for the Executor.
+- **[Executor Contract](https://github.com/HAAIL-Universe/AIBuild/blob/main/contracts/EXECUTOR_CONTRACT.md)**: The rules of engagement.
+- **[Runbook: UI Boot](https://github.com/HAAIL-Universe/AIBuild/blob/main/contracts/RUNBOOK_UI_BOOT.md)**: The specific UI requirements.
