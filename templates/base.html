@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Claims Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Micro-Claims Tracker</a>
+            <a href="/claims/new" class="button primary">+ New Claim</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="data-path">
+            Data Location: <code>{{ data_dir }}</code>
+        </div>
+        <div class="backup-instruction">
+            To backup: Copy the folder above to a safe location.
+        </div>
+    </footer>
+    <script src="/static/app.js"></script>
+</body>
+</html>

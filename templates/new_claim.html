@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 600px; margin: 0 auto;">
+    <h2>New Claim</h2>
+    <form action="/claims" method="post" enctype="multipart/form-data" onsubmit="disableSubmit(this)">
+        <input type="hidden" name="claim_uuid" id="claim_uuid">
+        
+        <div class="form-group">
+            <label>Type</label>
+            <select name="type" required>
+                {% for t in types %}
+                <option value="{{ t.value }}">{{ t.value }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Severity</label>
+            <select name="severity" required>
+                {% for s in severities %}
+                <option value="{{ s.value }}">{{ s.value }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" rows="4" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Photo (Optional, Max 5MB)</label>
+            <input type="file" name="photo" accept="image/*">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="button primary">Create Claim</button>
+            <a href="/" class="button secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Generate UUID on load
+    document.getElementById('claim_uuid').value = crypto.randomUUID();
+</script>
+{% endblock %}

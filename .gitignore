@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.vscode/
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+*.log
+*.err
+test_output*.txt
+compliance_output*.txt
+verification_output.txt
+final_verification.txt
