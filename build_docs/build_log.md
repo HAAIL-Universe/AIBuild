@@ -174,3 +174,20 @@
 
 **Stop Reason:**
 - Documentation Published.
+
+## [2026-01-02 15:00:00] GitHub Pages Hardening
+
+**Objective:** Fix broken links and missing screenshots on GitHub Pages.
+
+**Patch Summary:**
+- `docs/index.md`: Converted artifact links to absolute GitHub blob URLs (main branch).
+- `docs/index.md`: Commented out screenshot blocks to prevent broken images.
+- `docs/index.md`: Added explicit "Screenshots pending" note.
+
+**Verification Results:**
+1.  **Static Correctness:** Links point to `github.com/HAAIL-Universe/AIBuild/blob/main/...`.
+2.  **Asset Integrity:** Verified local existence of all referenced files.
+3.  **UX Safety:** No broken image icons will appear on the landing page.
+
+**Stop Reason:**
+- Pages Hardened.
