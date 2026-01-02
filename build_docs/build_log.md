@@ -156,3 +156,21 @@
 
 **Stop Reason:**
 - Posture Complete.
+
+## [2026-01-02 14:00:00] GitHub Pages Landing
+
+**Objective:** Publish documentation artifacts and landing page to GitHub Pages.
+
+**Patch Summary:**
+- `docs/index.md`: Updated landing page with relative links and asset paths.
+- `docs/_config.yml`: Added Jekyll theme configuration.
+- `docs/artifacts/`: Published blueprint, manifesto, directive, and contracts.
+- `docs/assets/`: Created placeholder for screenshots.
+
+**Verification Results:**
+1.  **Static Correctness:** Links in `index.md` are relative.
+2.  **Structure:** `docs/` folder structure matches GitHub Pages requirements.
+3.  **Contract Compliance:** No app code changes.
+
+**Stop Reason:**
+- Documentation Published.

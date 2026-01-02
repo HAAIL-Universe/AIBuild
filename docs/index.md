@@ -1,3 +1,8 @@
+---
+layout: default
+title: AI Build
+---
+
 # AI Build: Contract-First App Build Demo
 
 **A demonstration of a governed AI build workflow:**
@@ -38,7 +43,7 @@ This repository is a **workflow demonstration**. It showcases how AI agents can 
 ![Export Preview](assets/export.png)
 *Deterministic markdown export for weekly reporting.*
 
-*(Note: If screenshots are missing, please run the app locally and capture them to `docs/assets/`)*
+*(Note: Screenshots are pending. If missing, please run the app locally and capture them to `docs/assets/`)*
 
 ---
 
@@ -46,7 +51,7 @@ This repository is a **workflow demonstration**. It showcases how AI agents can 
 
 You can run this application locally or self-host it for your team.
 
-- **[View Source Code on GitHub](../)**
+- **[View Source Code on GitHub](https://github.com/HAAIL-Universe/AIBuild)**
 - **[Read the Self-Hosting Guide](SELF_HOSTING.md)**
 
 ---
@@ -55,8 +60,8 @@ You can run this application locally or self-host it for your team.
 
 Explore the documents that drove this build:
 
-- **[Blueprint](../build_docs/blueprint.md)**: The high-level architectural vision.
-- **[Manifesto](../build_docs/manifesto.md)**: The core philosophy of the build.
-- **[Directive](../build_docs/directive.md)**: The specific instructions for the Executor.
-- **[Executor Contract](../contracts/EXECUTOR_CONTRACT.md)**: The rules of engagement.
-- **[Runbook: UI Boot](../contracts/RUNBOOK_UI_BOOT.md)**: The specific UI requirements.
+- **[Blueprint](artifacts/blueprint.md)**: The high-level architectural vision.
+- **[Manifesto](artifacts/manifesto.md)**: The core philosophy of the build.
+- **[Directive](artifacts/directive.md)**: The specific instructions for the Executor.
+- **[Executor Contract](artifacts/EXECUTOR_CONTRACT.md)**: The rules of engagement.
+- **[Runbook: UI Boot](artifacts/RUNBOOK_UI_BOOT.md)**: The specific UI requirements.
