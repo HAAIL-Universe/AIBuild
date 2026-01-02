@@ -54,7 +54,7 @@ This repository is a **workflow demonstration**. It showcases how AI agents can 
 You can run this application locally or self-host it for your team.
 
 - **[View Source Code on GitHub](https://github.com/HAAIL-Universe/AIBuild)**
-- **[Read the Self-Hosting Guide](SELF_HOSTING.md)**
+- **[Read the Self-Hosting Guide](https://github.com/HAAIL-Universe/AIBuild/blob/main/docs/SELF_HOSTING.md)**
 
 ---
 
