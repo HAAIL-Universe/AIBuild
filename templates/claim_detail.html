@@ -2,6 +2,9 @@
 
 {% block content %}
 <div class="card">
+    <div style="margin-bottom: 1rem;">
+        <a href="/" style="text-decoration: none;">&larr; Back to Dashboard</a>
+    </div>
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2>Claim #{{ claim.id }}</h2>
         <span class="status-{{ claim.status.name }} status-badge" style="font-size: 1rem;">{{ claim.status.value }}</span>
@@ -43,7 +46,7 @@
                 
                 <div class="form-group">
                     <label>Update Photo</label>
-                    <input type="file" name="photo" accept="image/*">
+                    <input type="file" name="photo" accept="image/*" capture="environment">
                 </div>
                 
                 <button type="submit" class="button secondary">Save Changes</button>

@@ -45,32 +45,38 @@
 </div>
 
 <div class="card">
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Severity</th>
-                <th>Status</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for claim in claims %}
-            <tr>
-                <td>{{ claim.id }}</td>
-                <td>{{ claim.created_at.strftime('%Y-%m-%d') }}</td>
-                <td>{{ claim.type.value }}</td>
-                <td><span class="severity-{{ claim.severity.value }}">{{ claim.severity.value }}</span></td>
-                <td><span class="status-{{ claim.status.name }} status-badge">{{ claim.status.value }}</span></td>
-                <td>{{ claim.description[:50] }}{% if claim.description|length > 50 %}...{% endif %}</td>
-                <td><a href="/claims/{{ claim.id }}">View</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-id">ID</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Severity</th>
+                    <th class="col-status">Status</th>
+                    <th class="col-desc">Description</th>
+                    <th class="col-actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for claim in claims %}
+                <tr>
+                    <td class="col-id">{{ claim.id }}</td>
+                    <td>{{ claim.created_at.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ claim.type.value }}</td>
+                    <td><span class="severity-{{ claim.severity.value }}">{{ claim.severity.value }}</span></td>
+                    <td class="col-status">
+                        <a href="/claims/{{ claim.id }}" class="status-link">
+                            <span class="status-{{ claim.status.name }} status-badge">{{ claim.status.value }}</span>
+                        </a>
+                    </td>
+                    <td class="col-desc">{{ claim.description[:50] }}{% if claim.description|length > 50 %}...{% endif %}</td>
+                    <td class="col-actions"><a href="/claims/{{ claim.id }}">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="card export-panel">

@@ -2,6 +2,9 @@
 
 {% block content %}
 <div class="card" style="max-width: 600px; margin: 0 auto;">
+    <div style="margin-bottom: 1rem;">
+        <a href="/" style="text-decoration: none;">&larr; Back to Dashboard</a>
+    </div>
     <h2>New Claim</h2>
     <form action="/claims" method="post" enctype="multipart/form-data" onsubmit="disableSubmit(this)">
         <input type="hidden" name="claim_uuid" id="claim_uuid">
@@ -31,7 +34,7 @@
         
         <div class="form-group">
             <label>Photo (Optional, Max 5MB)</label>
-            <input type="file" name="photo" accept="image/*">
+            <input type="file" name="photo" accept="image/*" capture="environment">
         </div>
         
         <div class="form-group">
