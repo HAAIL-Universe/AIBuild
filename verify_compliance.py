@@ -186,6 +186,19 @@ def test_indexes():
     except Exception as e:
         log(f"FAIL: Index check: {e}")
 
+def test_auth_logic():
+    log("--- 8. Auth Logic Proof ---")
+    # Test 1: Auth Disabled (Default)
+    # We assume the server running is using the default env (no auth)
+    try:
+        resp = urllib.request.urlopen(f"{BASE_URL}/")
+        if resp.status == 200:
+            log("PASS: Auth disabled by default (200 OK)")
+        else:
+            log(f"FAIL: Auth disabled check failed: {resp.status}")
+    except Exception as e:
+        log(f"FAIL: Auth disabled check: {e}")
+
 if __name__ == "__main__":
     wait_for_server()
     test_ui_routes()
@@ -195,3 +208,4 @@ if __name__ == "__main__":
     check_pycache()
     test_logging_dedupe()
     test_indexes()
+    test_auth_logic()

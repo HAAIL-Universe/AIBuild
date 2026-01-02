@@ -136,3 +136,23 @@
 
 **Stop Reason:**
 - Packaging Complete.
+
+## [2026-01-02 13:00:00] Business-Trial Posture
+
+**Objective:** Business-trial posture + optional Basic Auth + docs alignment
+
+**Patch Summary:**
+- `main.py`: Added optional Basic Auth (env-gated) using `secrets.compare_digest`.
+- `SECURITY.md`: Updated deployment models to include Cloud Self-Host with Auth.
+- `docs/SELF_HOSTING.md`: Prioritized Local/Cloud options, added Auth config.
+- `README.md`: Added Trial Modes section.
+- `verify_compliance.py`: Added auth logic test (default state).
+
+**Verification Results:**
+1.  **Static Correctness:** Auth logic uses constant-time comparison.
+2.  **Runtime Sanity:** Server starts with/without auth env vars.
+3.  **Behavioral Intent:** Default run remains unauthenticated.
+4.  **Contract Compliance:** No new dependencies, no schema changes.
+
+**Stop Reason:**
+- Posture Complete.

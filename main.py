@@ -10,6 +10,10 @@ from claims.db import init_db
 from claims.models import ClaimType, Severity, Status, ClaimCreate, ClaimUpdate, ClaimStatusUpdate, ResolutionOutcome
 from claims import repo, storage, export
 import logging
+import os
+import secrets
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 # Configure logging
 logger = logging.getLogger("claims_tracker")
@@ -22,7 +26,38 @@ if not logger.handlers:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-app = FastAPI(title="Micro-Claims Tracker")
+# Basic Auth Logic
+security = HTTPBasic()
+
+def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
+    correct_user = os.getenv("BASIC_AUTH_USER")
+    correct_pass = os.getenv("BASIC_AUTH_PASS")
+    
+    if not correct_user or not correct_pass:
+        return "auth_disabled"
+
+    is_correct_user = secrets.compare_digest(credentials.username, correct_user)
+    is_correct_pass = secrets.compare_digest(credentials.password, correct_pass)
+
+    if not (is_correct_user and is_correct_pass):
+        raise StarletteHTTPException(
+            status_code=401,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return credentials.username
+
+# Conditional Dependency
+# We only enforce auth if env vars are set.
+# We apply this to the FastAPI app, but exclude static mounts by nature of FastAPI dependencies.
+app_dependencies = []
+if os.getenv("BASIC_AUTH_USER") and os.getenv("BASIC_AUTH_PASS"):
+    app_dependencies.append(Depends(get_current_username))
+    logger.info("Basic Auth ENABLED")
+else:
+    logger.info("Basic Auth disabled")
+
+app = FastAPI(title="Micro-Claims Tracker", dependencies=app_dependencies)
 
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")

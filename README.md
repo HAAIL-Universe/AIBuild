@@ -2,13 +2,18 @@
 
 A local-first micro-claims log that captures small warehouse issues in seconds, makes them searchable, and exports a deterministic weekly digest so they stop vanishing.
 
+## Trial Modes
+- **Local PC (Recommended)**: Run on localhost. No setup required.
+- **Cloud Self-Host**: Deploy to your own account (Render/Railway) with Basic Auth enabled.
+- **LAN (Advanced)**: Run on trusted internal networks.
+
 ## Documentation
 - **[Project Landing Page](docs/index.md)**: Overview of the AI build workflow and app showcase.
 - **[Self-Hosting Guide](docs/SELF_HOSTING.md)**: Instructions for running locally or on your own infrastructure.
 
 ## Self-Hosting
 Designed as a local-first trial tool; businesses can self-host on their own infrastructure.
-- **Safety Warning**: No authentication: don’t deploy publicly without protection.
+- **Safety Warning**: No authentication by default. Enable Basic Auth for cloud deployments.
 
 ## Problem
 Small losses and issues (damaged stock, missing kit, short picks, unsafe locations, supplier faults) don’t get logged properly because the process is too heavy. They vanish, nobody learns, and the cost repeats.
