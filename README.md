@@ -2,6 +2,14 @@
 
 A local-first micro-claims log that captures small warehouse issues in seconds, makes them searchable, and exports a deterministic weekly digest so they stop vanishing.
 
+## Documentation
+- **[Project Landing Page](docs/index.md)**: Overview of the AI build workflow and app showcase.
+- **[Self-Hosting Guide](docs/SELF_HOSTING.md)**: Instructions for running locally or on your own infrastructure.
+
+## Self-Hosting
+Designed as a local-first trial tool; businesses can self-host on their own infrastructure.
+- **Safety Warning**: No authentication: don’t deploy publicly without protection.
+
 ## Problem
 Small losses and issues (damaged stock, missing kit, short picks, unsafe locations, supplier faults) don’t get logged properly because the process is too heavy. They vanish, nobody learns, and the cost repeats.
 
@@ -10,7 +18,7 @@ This is a strict MVP with hard constraints:
 - **Local-only**: Runs on localhost.
 - **Single User**: No authentication, no multi-user support.
 - **No Integrations**: No connection to WMS, Slack, or email.
-- **No LAN Mode**: Desktop use only.
+- **LAN Mode**: Possible by running uvicorn on 0.0.0.0, but there’s no auth—use trusted networks only.
 - **No Delete**: Destructive actions are out of scope.
 
 ## Tech Stack

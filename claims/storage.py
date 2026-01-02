@@ -4,15 +4,19 @@ from pathlib import Path
 from fastapi import UploadFile
 
 def get_data_dir() -> Path:
-    # OS-appropriate app data directory
-    # Windows: %APPDATA%\claims_tracker
-    # Linux/Mac: ~/.claims_tracker
-    if os.name == 'nt':
+    # Check for env override first (for cloud persistence)
+    env_override = os.getenv('CLAIMS_DATA_DIR')
+    if env_override:
+        data_dir = Path(env_override)
+    elif os.name == 'nt':
+        # Windows: %APPDATA%\claims_tracker
         base_dir = Path(os.getenv('APPDATA'))
+        data_dir = base_dir / ".claims_tracker"
     else:
+        # Linux/Mac: ~/.claims_tracker
         base_dir = Path.home()
+        data_dir = base_dir / ".claims_tracker"
     
-    data_dir = base_dir / ".claims_tracker"
     data_dir.mkdir(parents=True, exist_ok=True)
     
     uploads_dir = data_dir / "uploads"

@@ -118,3 +118,21 @@
 
 **Stop Reason:**
 - Hardening Complete.
+
+## [2026-01-02 12:00:00] Self-Hosting Packaging
+
+**Objective:** Add SELF_HOSTING guide + README link (+ optional CLAIMS_DATA_DIR override)
+
+**Patch Summary:**
+- `docs/SELF_HOSTING.md`: Added guide for Local, LAN, and Cloud hosting.
+- `README.md`: Added Self-Hosting section and safety warning.
+- `claims/storage.py`: Added `CLAIMS_DATA_DIR` env var support for custom persistence.
+
+**Verification Results:**
+1.  **Static Correctness:** Docs link works, env var logic handles overrides correctly.
+2.  **Runtime Sanity:** Server starts normally.
+3.  **Behavioral Intent:** Setting `CLAIMS_DATA_DIR` redirects DB/uploads to new path.
+4.  **Contract Compliance:** No auth added, no schema changes.
+
+**Stop Reason:**
+- Packaging Complete.
